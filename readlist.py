@@ -28,7 +28,6 @@ class ReadList():
                     self.add_item(self.line_to_entry(line))
 
     def save_data(self, filename):
-
         with open(filename, 'w') as file:
             for book_item in self.read_data:
                 line = self.entry_to_line(book_item)
@@ -36,9 +35,11 @@ class ReadList():
 
     def add_item(self, item):
         if item == None or len(item.keys()) != ReadList.NUM_OF_FIELDS:
+            print('Error adding item')
             return None
 
         self.read_data.append(item)
+        print('Length: ' + str(len(self.read_data)))
         return item
 
     def entry_to_line(self, item):
