@@ -1,3 +1,4 @@
+#TODO: make an Item class instead of item all over the place
 from readlist import ReadList
 
 #format for database file
