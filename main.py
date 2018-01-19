@@ -1,5 +1,6 @@
 #TODO: make an Item class instead of item all over the place
 from readlist import ReadList
+from book import Book
 
 #format for database file
 #title:author:total_pages:current_page:start_date:last_read
@@ -14,28 +15,22 @@ def main():
         read_list.display_item(book_item)
         print('-*' * 20 + '-')
 
-        print(read_list.entry_to_line(book_item))
 
-    add_new_item(read_list)
-    read_list.save_data('books.txt')
-#    read_list.dump_data()
 
-def open_read_list(filename):
-    pass
-
-def display_read_list(read_list):
-    pass
+    #add_new_item(read_list)
+    #read_list.save_data('books.txt')
 
 def add_new_item(read_list):
-    d = {}
-    d['title'] = input('Title: ')
-    d['author'] = input('Author Name: ')
-    d['total_pages'] = input('Number of Pages: ')
-    d['current_page'] = input('Current Page: ')
-    d['start_date'] = input('Start Date: ')
-    d['last_read_date'] = input('Last Read Date: ')
 
-    read_list.add_item(d)
+    title = input('Title: ')
+    author = input('Author Name: ')
+    total_pages = input('Number of Pages: ')
+    current_page = input('Current Page: ')
+    start_date = input('Start Date: ')
+    last_read_date = input('Last Read Date: ')
+
+    new_book = Book(title, author, total_pages, start_date)
+    read_list.add_item(new_book)
 
 
 if __name__ == '__main__':
