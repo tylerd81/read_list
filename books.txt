@@ -1,3 +1,2 @@
 daemon:daniel suarez:632:156:01/08/2018:01/15/2018
-python data structures and algorithms:benjamin baka:290:62:01/13/2018:01/16/2018
-Test Book:Tyler Dee:599:120:01/16/2018:01/16/2018
+python data structures and algorithms:benjamin baka:290:458:01/13/2018:01/16/2018

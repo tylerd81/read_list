@@ -11,6 +11,7 @@ class ReadList():
        self.current_book = 0
 
     def __iter__(self):
+        self.current_book = 0
         return self
 
     # Iterator next()
@@ -41,6 +42,15 @@ class ReadList():
     def add_new_book(self, book_item):
         self.book_list.append(book_item)
 
+    def get_book(self, index):
+        if index >= 0 and index < len(self.book_list):
+            return self.book_list[index]
+        else:
+            return None
+
+    def remove(self, book_item):
+        self.book_list.remove(book_item)
+
     def display_item(self, item):
 
         print('Title: ' + item.title)
@@ -49,4 +59,4 @@ class ReadList():
         print('Current Page: ' + str(item.current_page))
         print('Start Date: ' + item.start_date)
         print('Last Read: ' + item.last_read_date)
-        print('Status: ' + str(item.get_percent_read()))
+        print('Status: {}% read '.format(str(item.get_percent_read())))
